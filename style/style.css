@@ -187,6 +187,11 @@ nav div.imageContainer img:hover {
 }
 
 @media (max-width: 550px) {
+  .hidden_nav {
+    width: 250px;
+    transform: translateX(-250px);
+  }
+
   .main .black_background {
     font-size: 30px;
   }
@@ -195,6 +200,10 @@ nav div.imageContainer img:hover {
   }
   .main .black_background h1 #typed {
     font-size: 30px;
+  }
+
+  .nav_active {
+    transform: translateX(0px);
   }
 }
 .about {

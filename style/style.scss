@@ -175,8 +175,12 @@ nav div.imageContainer img:hover {
     }
   }
 }
-// set up the main page
+// set up the main page RWD
 @media (max-width: 550px) {
+  .hidden_nav {
+    width: 250px;
+    transform: translateX(-250px);
+  }
   .main .black_background {
     font-size: 30px;
     h1 {
@@ -185,6 +189,9 @@ nav div.imageContainer img:hover {
         font-size: 30px;
       }
     }
+  }
+  .nav_active {
+    transform: translateX(0px);
   }
 }
 
