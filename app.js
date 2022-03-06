@@ -1,3 +1,27 @@
+(function () {
+  const select = (ele, all = false) => {
+    if (all) {
+      return document.querySelectorAll(ele);
+    } else {
+      return document.querySelector(ele);
+    }
+  };
+  const on = (type, ele, listener, all = false) => {
+    let selectEle = select(ele, all);
+    if (selectEle) {
+      if (all) {
+        selectEle.forEach((e) => e.addEventListener(type, listener));
+      } else {
+        selectEle.addEventListener(type, listener);
+      }
+    }
+  };
+  on("click", ".nav_burger", function (e) {
+    select(".hidden_nav").classList.toggle("nav_active");
+    this.classList.toggle("toggle");
+  });
+})();
+
 window.addEventListener("scroll", (e) => {
   let aboutPage = document.querySelector(".about");
   if (window.scrollY > 180) {
@@ -10,18 +34,6 @@ window.addEventListener("load", (e) => {
     aboutPage.style.opacity = "1";
   }
 });
-
-//burger
-(function navBar() {
-  let burger = document.querySelector(".burger");
-  let nav = document.querySelector("nav");
-
-  burger.addEventListener("click", (e) => {
-    nav.classList.toggle("nav-active");
-
-    burger.classList.toggle("toggle");
-  });
-})();
 
 var typed = new Typed("#typed", {
   strings: ["front-end engineer", "beer lover", "cat lover"],
