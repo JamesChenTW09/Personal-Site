@@ -22,19 +22,6 @@
   });
 })();
 
-window.addEventListener("scroll", (e) => {
-  let aboutPage = document.querySelector(".about");
-  if (window.scrollY > 180) {
-    aboutPage.style.opacity = "1";
-  }
-});
-window.addEventListener("load", (e) => {
-  let aboutPage = document.querySelector(".about");
-  if (window.scrollY > 180) {
-    aboutPage.style.opacity = "1";
-  }
-});
-
 var typed = new Typed("#typed", {
   strings: ["front-end engineer", "beer lover", "cat lover"],
   backSpeed: 40,
@@ -43,32 +30,25 @@ var typed = new Typed("#typed", {
   backDelay: 900,
   loop: true,
 });
-
-let skillList = document.querySelector(".skill ul");
-let skillContent = document.querySelector(".skill_content");
-skillList.children[0].addEventListener("click", (e) => {
-  skillContent.style.transform = "scale(1)";
-  var typed = new Typed("#typed1", {
-    strings: [
-      "sjefrnreskjfnk jesnfjsenfjsenkfjnse skjefnksjefnkj sskejbfk jsebfkj sfrnreskjfnk jesnfjsenfjsenkfjnse skjefnksjeffrnreskjfnk jesnfjsenfjsenkfjnse skjefnksjefe",
-    ],
-    typeSpeed: 40,
-    startDelay: 1000,
-    loop: false,
-  });
-});
-
-//navlink 自動滾動
-let myLink = document.querySelector(".nav_links");
-myLink.children[0].addEventListener("click", () => {
-  window.scrollTo(0, 0);
-});
-myLink.children[1].addEventListener("click", () => {
-  window.scrollTo(0, 640);
-});
-myLink.children[2].addEventListener("click", () => {
-  window.scrollTo(0, 1140);
-});
-myLink.children[3].addEventListener("click", () => {
-  window.scrollTo(0, 2170);
-});
+window.onload = () => {
+  let skillset = document.querySelector(".skill_title").children;
+  let content = document.querySelectorAll(".skill_content p");
+  for (let i = 0; i < skillset.length; i++) {
+    skillset[i].style.width = "80%";
+    skillset[i].style.position = "relative";
+    skillset[i].addEventListener("click", (e) => {
+      if (e.target.style.width == "100%") {
+        e.target.style.width = "80%";
+      } else {
+        for (let i = 0; i < skillset.length; i++) {
+          skillset[i].style.width = "80%";
+          content[i].style.display = "none";
+        }
+        e.target.style.width = "100%";
+        content[i].style.display = "block";
+      }
+    });
+  }
+  skillset[0].style.width = "100%";
+  content[0].style.display = "block";
+};
