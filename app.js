@@ -83,15 +83,15 @@ var typed = new Typed("#typed", {
   for (let i = 0; i < skillList.length; i++) {
     skillList[i].addEventListener("click", (e) => {
       if (skillDetail[i].style.display === "block") {
-        about.style.gridTemplateRows = "repeat(11, 55px)";
-        skillListRWD.style.gridRow = "7/12";
+        about.style.gridTemplateRows = "repeat(10, 50px)";
+        skillListRWD.style.gridRow = "7/11";
         skillDetail[i].style.display = "none";
       } else {
         for (let i = 0; i < skillList.length; i++) {
           skillDetail[i].style.display = "none";
         }
-        about.style.gridTemplateRows = "repeat(16, 55px)";
-        skillListRWD.style.gridRow = "7/17";
+        about.style.gridTemplateRows = "repeat(14,50px)";
+        skillListRWD.style.gridRow = "7/15";
         skillDetail[i].style.display = "block";
         skillDetail[i].classList.toggle("skillDetailUp");
       }

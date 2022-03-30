@@ -228,12 +228,13 @@ nav div.imageContainer img:hover {
 }
 .about .skill {
   background-color: #e1d5d0;
-  border-radius: 10px;
+  border-radius: 5px;
   grid-column: 2/20;
   grid-row: 5/10;
   display: grid;
   grid-template-columns: 240px 65px 620px 65px;
   grid-template-rows: repeat(8, 34px) 2px;
+  font-size: 19px;
 }
 .about .skill .skillTitle {
   grid-column: 1/2;
@@ -244,13 +245,11 @@ nav div.imageContainer img:hover {
 }
 .about .skill .skillTitle div {
   overflow: hidden;
-  color: #fdfbfb;
   letter-spacing: 2px;
   cursor: pointer;
   background-color: #668172;
   padding: 9.4px 0px;
   text-align: center;
-  font-size: 19px;
   font-weight: bold;
   transition: 0.4s;
 }
@@ -327,7 +326,6 @@ nav div.imageContainer img:hover {
 }
 .about .skill .skillContent p {
   display: none;
-  transition: all 0.8s;
   -webkit-animation: content_show_up 0.8s forwards;
           animation: content_show_up 0.8s forwards;
 }
@@ -340,97 +338,87 @@ nav div.imageContainer img:hover {
   margin-top: 10px;
 }
 
-@-webkit-keyframes content_show_up {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes content_show_up {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   .about {
-    width: 90%;
+    width: 100%;
+    margin: 10px auto 10px auto;
     grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(9, 1fr);
   }
   .about .skill {
-    grid-template-columns: 240px 30px auto 30px;
-  }
-  .about .skill .skillTitle div {
-    font-size: 19px;
-  }
-  .about .skill .skillContent {
-    padding: 10px;
+    grid-template-columns: 30% 10px 60% 10px;
   }
 }
-@media (max-width: 850px) {
+@media (max-width: 885px) {
   .about {
-    width: 90%;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(11, 55px);
+    grid-template-columns: auto 450px auto;
+    grid-template-rows: repeat(10, 50px);
   }
   .about h2 {
-    grid-column: 1/2;
-    grid-row: 1/2;
+    grid-column: 2/3;
+    grid-row: 1/3;
   }
   .about p {
-    grid-column: 1/2;
-    grid-row: 3/6;
-    line-height: 25px;
+    grid-column: 2/3;
+    grid-row: 3/7;
   }
   .about .skill {
     display: none;
   }
   .about .skillListRWD {
     display: block;
-    grid-column: 1/2;
-    grid-row: 7/12;
+    grid-column: 2/3;
+    grid-row: 7/11;
   }
   .about .skillListRWD div {
-    cursor: pointer;
-    padding: 8px 0px;
-    border-radius: 5px;
-    background-color: #668172;
+    background-color: #17492f;
+    color: #f5efed;
+    padding: 5px 0px;
     text-align: center;
-    font-size: 19px;
-    border: 1px solid #e1d5d0;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 1px solid #e1d5d0;
   }
   .about .skillListRWD p {
-    overflow: hidden;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #e1d5d0;
-    border: 1px solid #948c89;
-    border-top: none;
     display: none;
-    height: 0;
-    -webkit-animation: skillDetailUp 0.3s forwards;
-            animation: skillDetailUp 0.3s forwards;
+    padding: 10px;
+    background-color: #e1d5d0;
   }
 }
-@-webkit-keyframes skillDetailUp {
-  from {
-    height: 0%;
+@media (max-width: 500px) {
+  .about {
+    grid-template-columns: auto 330px auto;
+    grid-template-rows: repeat(10, 50px);
   }
-  to {
-    height: 250px;
+  .about h2 {
+    grid-column: 2/3;
+    grid-row: 1/3;
   }
-}
-@keyframes skillDetailUp {
-  from {
-    height: 0%;
+  .about p {
+    grid-column: 2/3;
+    grid-row: 3/8;
   }
-  to {
-    height: 250px;
+  .about .skill {
+    display: none;
+  }
+  .about .skillListRWD {
+    display: block;
+    grid-column: 2/3;
+    grid-row: 7/11;
+  }
+  .about .skillListRWD div {
+    background-color: #17492f;
+    color: #f5efed;
+    padding: 5px 0px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 1px solid #e1d5d0;
+  }
+  .about .skillListRWD p {
+    display: none;
+    padding: 10px;
+    background-color: #e1d5d0;
   }
 }
 .resume {
@@ -438,7 +426,7 @@ nav div.imageContainer img:hover {
   margin: 100px auto 30px auto;
   display: grid;
   grid-template-columns: repeat(20, 55px);
-  grid-template-rows: repeat(25, 48px);
+  grid-template-rows: repeat(21, 48px);
 }
 .resume h2 {
   grid-column: 2/5;
@@ -452,35 +440,34 @@ nav div.imageContainer img:hover {
   grid-column: 2/10;
   grid-row: 3/10;
   position: relative;
-  display: grid;
-  grid-template-columns: 50px auto 25px;
-  grid-template-rows: 37px auto;
 }
-.resume .summary h3 {
-  grid-column: 1/3;
-  grid-row: 1/2;
+.resume .summary .summaryContainer {
+  padding: 20px 50px 0px 0px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.resume .summary .summaryCircle {
+.resume .summary .summaryContainer h3 {
+  padding-left: 30px;
+  position: relative;
+}
+.resume .summary .summaryContainer h3 .summaryCircle {
   position: absolute;
   border-radius: 100px;
+  top: 5px;
+  left: 0;
   width: 15px;
   height: 15px;
   border: 3px solid black;
-  top: 13%;
-  left: 0px;
   background-color: white;
   z-index: 10;
 }
-.resume .summary .summaryContainer {
-  grid-column: 2/3;
-  grid-row: 2/3;
-  width: 300px;
-}
 .resume .summary .summaryContainer::before {
   content: "";
-  top: 13%;
-  left: 6.5px;
-  height: 240px;
+  left: 6px;
+  top: 25px;
+  height: 90%;
   border-left: 3px solid black;
   position: absolute;
   display: block;
@@ -489,10 +476,12 @@ nav div.imageContainer img:hover {
   margin-top: 15px;
   font-size: 20px;
   line-height: 25px;
+  padding-left: 30px;
 }
 .resume .summary .summaryContainer ul {
   font-size: 20px;
-  margin: 25px 0px 0px 10px;
+  padding-left: 30px;
+  margin-top: 25px;
 }
 .resume .summary .summaryContainer ul li {
   padding: 8px;
@@ -505,60 +494,30 @@ nav div.imageContainer img:hover {
 }
 .resume .education::before {
   content: "";
-  top: 8.5%;
+  top: 10%;
   left: 6px;
-  height: 27rem;
+  height: 68%;
   border-left: 3px solid black;
   position: absolute;
   display: block;
 }
-.resume .education .educationCircle {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  top: 8.5%;
-  left: 0px;
-  background-color: white;
-  z-index: 10;
-}
-.resume .education .educationCircle1 {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  top: 32.5%;
-  left: 0px;
-  background-color: white;
-  z-index: 10;
-}
-.resume .education .educationCircle2 {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  top: 56%;
-  left: 0px;
-  background-color: white;
-  z-index: 10;
-}
-.resume .education .educationCircle3 {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  top: 79%;
-  left: 0px;
-  background-color: white;
-  z-index: 10;
-}
 .resume .education .educationDetail {
-  width: 300px;
-  margin: 15px 0px 0px 50px;
+  padding: 20px 50px 0px 0px;
+}
+.resume .education .educationDetail h3 {
+  padding-left: 30px;
+  position: relative;
+}
+.resume .education .educationDetail h3 .educationCircle {
+  position: absolute;
+  border-radius: 100px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid black;
+  left: 0px;
+  top: 5px;
+  background-color: white;
+  z-index: 10;
 }
 .resume .education .educationDetail .year {
   font-weight: bold;
@@ -567,63 +526,141 @@ nav div.imageContainer img:hover {
   width: 60px;
   text-align: center;
   background-color: #668172;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 30px;
+}
+.resume .education .educationDetail p {
+  margin-left: 30px;
+}
+.resume .education .educationDetail1 {
+  padding: 20px 50px 0px 0px;
+}
+.resume .education .educationDetail1 h3 {
+  padding-left: 30px;
+  position: relative;
+}
+.resume .education .educationDetail1 h3 .educationCircle1 {
+  position: absolute;
+  border-radius: 100px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid black;
+  left: 0px;
+  top: 5px;
+  background-color: white;
+  z-index: 10;
+}
+.resume .education .educationDetail1 .year {
+  font-weight: bold;
+  color: #fdfbfb;
+  padding: 8px;
+  width: 60px;
+  text-align: center;
+  background-color: #668172;
+  margin: 10px 30px;
+}
+.resume .education .educationDetail1 p {
+  margin-left: 30px;
+}
+.resume .education .educationDetail2 {
+  padding: 20px 50px 0px 0px;
+}
+.resume .education .educationDetail2 h3 {
+  padding-left: 30px;
+  position: relative;
+}
+.resume .education .educationDetail2 h3 .educationCircle2 {
+  position: absolute;
+  border-radius: 100px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid black;
+  left: 0px;
+  top: 5px;
+  background-color: white;
+  z-index: 10;
+}
+.resume .education .educationDetail2 .year {
+  font-weight: bold;
+  color: #fdfbfb;
+  padding: 8px;
+  width: 60px;
+  text-align: center;
+  background-color: #668172;
+  margin: 10px 30px;
+}
+.resume .education .educationDetail2 p {
+  margin-left: 30px;
 }
 .resume .experience {
   position: relative;
   grid-column: 11/20;
-  grid-row: 3/26;
+  grid-row: 3/21;
 }
 .resume .experience::before {
   content: "";
   top: 60px;
   left: 6px;
-  height: 63rem;
+  height: 89%;
   border-left: 3px solid black;
   position: absolute;
   display: block;
 }
-.resume .experience .experienceCircle {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  top: 45px;
-  left: 0px;
-  background-color: white;
-  z-index: 10;
-}
-.resume .experience .experienceCircle1 {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  top: 392px;
-  left: 0px;
-  background-color: white;
-  z-index: 10;
-}
-.resume .experience .experienceCircle2 {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  top: 738px;
-  left: 0px;
-  background-color: white;
-  z-index: 10;
-}
 .resume .experience .experienceDetail {
   font-size: 20px;
-  margin: 15px 0px 0px 50px;
+  padding: 20px 50px 0px 0px;
+}
+.resume .experience .experienceDetail h3 {
+  padding-left: 30px;
+  position: relative;
+}
+.resume .experience .experienceDetail h3 .experienceCircle {
+  position: absolute;
+  border-radius: 100px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid black;
+  top: 5px;
+  left: 0px;
+  background-color: white;
+  z-index: 10;
 }
 .resume .experience .experienceDetail p {
+  margin-left: 30px;
   padding: 10px 0px;
 }
+.resume .experience .experienceDetail ul {
+  margin-left: 30px;
+}
 .resume .experience .experienceDetail ul li {
+  padding: 10px 0px;
+}
+.resume .experience .experienceDetail1 {
+  font-size: 20px;
+  padding: 20px 50px 0px 0px;
+}
+.resume .experience .experienceDetail1 h3 {
+  padding-left: 30px;
+  position: relative;
+}
+.resume .experience .experienceDetail1 h3 .experienceCircle1 {
+  position: absolute;
+  border-radius: 100px;
+  width: 15px;
+  height: 15px;
+  border: 3px solid black;
+  top: 5px;
+  left: 0px;
+  background-color: white;
+  z-index: 10;
+}
+.resume .experience .experienceDetail1 p {
+  margin-left: 30px;
+  padding: 10px 0px;
+}
+.resume .experience .experienceDetail1 ul {
+  margin-left: 30px;
+}
+.resume .experience .experienceDetail1 ul li {
   padding: 10px 0px;
 }
 
@@ -635,108 +672,81 @@ nav div.imageContainer img:hover {
   margin-top: 10px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
   .resume {
-    width: 100%;
-    margin: 30px auto 30px auto;
-    display: grid;
+    width: 800px;
     grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(25, 48px);
+    grid-template-rows: repeat(21, 1fr);
   }
-  .resume .summary {
-    grid-column: 2/9;
+  .resume .education::before {
+    height: 65%;
   }
-  .resume .summary .summaryContainer {
-    width: 250px;
-  }
-  .resume .summary .summaryContainer::before {
-    height: 16.5rem;
-  }
-  .resume .education {
-    grid-column: 2/9;
-  }
-  .resume .education .educationDetail {
-    width: 270px;
-  }
-  .resume .experience {
-    grid-column: 10/19;
+  .resume .experience::before {
+    height: 93%;
   }
 }
-@media (max-width: 1080px) {
+@media (max-width: 885px) {
   .resume {
-    grid-template-columns: 5% 20% 70% 5%;
-    grid-template-rows: repeat(41, 48px);
+    width: 100%;
+    grid-template-columns: auto 450px auto;
+    grid-template-rows: repeat(37, 50px);
   }
   .resume h2 {
     grid-column: 2/3;
-    grid-row: 1/3;
-    font-size: 2.5rem;
   }
   .resume .summary {
-    grid-column: 2/4;
-    grid-row: 3/10;
+    grid-column: 2/3;
   }
-  .resume .summary .summaryContainer {
-    width: 100%;
-  }
-  .resume .summary .summaryContainer::before {
-    height: 11rem;
+  .resume .summary h3 {
+    grid-column: 2/3;
   }
   .resume .education {
-    grid-column: 2/4;
-    grid-row: 10/20;
+    grid-column: 2/3;
   }
-  .resume .education .educationDetail {
-    width: 100%;
+  .resume .education h3 {
+    grid-column: 2/3;
   }
   .resume .experience {
-    grid-row: 22/41;
-    grid-column: 2/4;
+    grid-row: 19/37;
+    grid-column: 2/3;
   }
   .resume .experience::before {
-    height: 53rem;
+    height: 87%;
+  }
+  .resume .experience h3 {
+    grid-column: 2/3;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .resume {
-    grid-template-rows: repeat(46, 48px);
+    grid-template-columns: auto 330px auto;
+    grid-template-rows: repeat(45, 50px);
   }
   .resume h2 {
-    grid-column: 2/4;
+    grid-column: 2/3;
   }
-  .resume .summary .summaryContainer::before {
-    height: 13rem;
+  .resume .summary {
+    grid-column: 2/3;
   }
-  .resume .experience {
-    grid-row: 22/47;
+  .resume .summary h3 {
+    grid-column: 2/3;
   }
-  .resume .experience::before {
-    height: 63rem;
+  .resume .education {
+    grid-row: 11/23;
+    grid-column: 2/3;
   }
-}
-@media (max-width: 540px) {
-  .resume {
-    grid-template-rows: repeat(49, 48px);
-  }
-  .resume .experience {
-    grid-row: 22/50;
-  }
-  .resume .experience::before {
-    height: 73rem;
-  }
-}
-@media (max-width: 430px) {
-  .resume {
-    grid-template-rows: repeat(55, 48px);
-  }
-  .resume .summary .summaryContainer::before {
-    height: 16.5rem;
+  .resume .education h3 {
+    grid-column: 2/3;
   }
   .resume .experience {
-    grid-row: 22/56;
+    grid-row: 23/45;
+    grid-column: 2/3;
   }
   .resume .experience::before {
-    height: 94rem;
+    height: 91%;
+  }
+  .resume .experience h3 {
+    grid-column: 2/3;
   }
 }
 .portfolio {
@@ -868,55 +878,4 @@ nav div.imageContainer img:hover {
 ::placeholder {
   text-align: center;
   font-size: 16px;
-}
-
-@media (max-width: 1150px) {
-  .contact {
-    width: 100%;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(22, 30px);
-  }
-  .contact .contactContainer {
-    grid-template-columns: 15px 440px auto 15px;
-  }
-  .contact .contactContainer .contactInfo {
-    grid-column: 3/4;
-  }
-}
-@media (max-width: 800px) {
-  .contact h2 {
-    grid-column: 2/20;
-  }
-  .contact p {
-    grid-row: 4/8;
-  }
-  .contact .contactContainer {
-    grid-row: 8/21;
-    grid-template-rows: repeat(20, 19px);
-  }
-}
-@media (max-width: 500px) {
-  .contact {
-    grid-template-rows: repeat(26, 30px);
-  }
-  .contact p {
-    grid-row: 4/9;
-  }
-  .contact .contactContainer {
-    grid-row: 10/23;
-    grid-template-columns: 15px 80% auto 15px;
-    grid-template-rows: repeat(19, 19px);
-  }
-  .contact .contactContainer .contactIcon {
-    grid-row: 3/19;
-  }
-  .contact .contactContainer .contactIcon input {
-    width: 90%;
-  }
-  .contact .contactContainer .contactIcon textarea {
-    width: 90%;
-  }
-  .contact .contactContainer .contactIcon button {
-    width: 90%;
-  }
 }/*# sourceMappingURL=style.css.map */
