@@ -144,7 +144,7 @@ html {
 }
 .navLinks li::after {
   content: "";
-  border-bottom: 2px solid #444444;
+  border-bottom: 2px solid rgb(68, 68, 68);
   display: block;
   margin-top: 5px;
   width: 100%;
@@ -388,7 +388,7 @@ nav div.imageContainer img:hover {
 @media (max-width: 500px) {
   .about {
     grid-template-columns: auto 330px auto;
-    grid-template-rows: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px) 20px;
   }
   .about h2 {
     grid-column: 2/3;
@@ -404,7 +404,7 @@ nav div.imageContainer img:hover {
   .about .skillListRWD {
     display: block;
     grid-column: 2/3;
-    grid-row: 7/11;
+    grid-row: 7/12;
   }
   .about .skillListRWD div {
     background-color: #17492f;

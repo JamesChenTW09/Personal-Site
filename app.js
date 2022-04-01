@@ -83,8 +83,8 @@ var typed = new Typed("#typed", {
   for (let i = 0; i < skillList.length; i++) {
     skillList[i].addEventListener("click", (e) => {
       if (skillDetail[i].style.display === "block") {
-        about.style.gridTemplateRows = "repeat(10, 50px)";
-        skillListRWD.style.gridRow = "7/11";
+        about.style.gridTemplateRows = "repeat(10, 50px) 20px";
+        skillListRWD.style.gridRow = "7/12";
         skillDetail[i].style.display = "none";
       } else {
         for (let i = 0; i < skillList.length; i++) {
