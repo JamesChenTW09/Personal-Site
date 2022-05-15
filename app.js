@@ -61,8 +61,8 @@ var typed = new Typed("#typed", {
   const contact = select(".contact");
 
   on("click", ".navBurger", function (e) {
-    select(".hiddenNav").classList.toggle("navActive");
-    this.classList.toggle("toggle");
+    select(".hiddenNav").classList.toggle("showHiddenNav");
+    this.classList.toggle("burgerTransform");
   });
 
   const eleArray = [main, about, resume, portfolio, contact];

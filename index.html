@@ -32,7 +32,7 @@
     </section>
     <nav class="hiddenNav">
       <div class="imageContainer">
-        <img src="./style/P_20181005_105721_vHDR_On_HP.jpg" alt="" />
+        <div class="headShot"></div>
       </div>
       <h2>James Chen</h2>
       <ul class="iconLogo">
@@ -272,11 +272,23 @@
     <section class="portfolio">
       <h2>Portfolio</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-        architecto neque ea sapiente harum nisi quis provident ad, inventore
-        fugiat obcaecati eaque voluptatibus incidunt tenetur.
+        Check out some of the projects I'm working on! More details can be found
+        at my GitHub.
       </p>
-      <div class="portfolioContainer"></div>
+      <div class="portfolioContainer">
+        <div class="portfolioItem">
+          <img src="./photo/drinkgether.jpg" alt="" />
+          <div class="portfolioLink">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+        <div class="portfolioItem">
+          <img src="./photo/taipei tour.jpg" alt="" />
+          <div class="portfolioLink">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="contact">
       <h2>Contact</h2>
@@ -286,13 +298,41 @@
         cupiditate voluptate.
       </p>
       <div class="contactContainer">
-        <section class="contactIcon">
-          <input type="text" placeholder="請輸入姓名" />
-          <input type="text" placeholder="請輸入信箱" />
-          <textarea name="text" id=""></textarea>
+        <section class="contactForm">
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="email" />
+          <textarea name="text" placeholder="any feedback"></textarea>
           <button>Submit</button>
         </section>
-        <section class="contactInfo"></section>
+        <section class="contactInfo">
+          <div class="contactInfoItem">
+            <div class="contactIconContainer">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <h4>Email</h4>
+            <p>js1031222@gmail.com</p>
+          </div>
+          <div class="contactInfoItem">
+            <div class="contactIconContainer">
+              <i class="fa-solid fa-square-phone-flip"></i>
+            </div>
+            <h4>Call</h4>
+            <p>+886 952207442</p>
+          </div>
+          <div class="contactInfoItem">
+            <div class="contactIconContainer">
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <h4>LinkedIn</h4>
+            <p>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/james-chen-867491216/"
+                >Link to my LinkedIn</a
+              >
+            </p>
+          </div>
+        </section>
       </div>
     </section>
   </body>
