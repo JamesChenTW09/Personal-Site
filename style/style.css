@@ -3,7 +3,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Hubballi", cursive;
-  overflow-x: hidden;
 }
 
 html {
@@ -53,6 +52,7 @@ html {
 }
 
 .hiddenNav {
+  overflow-x: hidden;
   transform: translateX(-300px);
   position: fixed;
   left: 0;
@@ -250,6 +250,7 @@ html {
   text-align: center;
   font-weight: bold;
   transition: 0.4s;
+  position: relative;
 }
 .about .skill .skillTitle div:nth-child(1)::after {
   right: 0px;
@@ -347,7 +348,7 @@ html {
   .about {
     width: 100%;
     grid-template-columns: auto 50px 100px 250px 50px auto;
-    grid-template-rows: repeat(10, 50px);
+    grid-template-rows: repeat(11, 50px);
   }
   .about h2 {
     grid-column: 2/4;
@@ -363,7 +364,7 @@ html {
   .about .skillListRWD {
     display: block;
     grid-column: 3/5;
-    grid-row: 6/11;
+    grid-row: 6/12;
   }
   .about .skillListRWD div {
     background-color: #17492f;
@@ -375,21 +376,15 @@ html {
     border-bottom: 1px solid #e1d5d0;
   }
   .about .skillListRWD p {
-    display: none;
-    padding: 10px;
+    height: 0px;
+    overflow-x: hidden;
+    transition: 0.4s;
     background-color: #e1d5d0;
   }
 }
 @media (max-width: 500px) {
   .about {
     grid-template-columns: auto 30px 120px 140px 30px auto;
-    grid-template-rows: repeat(10, 50px) 20px;
-  }
-  .about p {
-    grid-row: 3/8;
-  }
-  .about .skillListRWD {
-    grid-row: 7/12;
   }
 }
 .resume {
@@ -397,7 +392,7 @@ html {
   margin: 100px auto 30px auto;
   display: grid;
   grid-template-columns: repeat(20, 55px);
-  grid-template-rows: repeat(21, 48px);
+  grid-template-rows: repeat(24, 48px);
 }
 .resume h2 {
   grid-column: 2/5;
@@ -451,8 +446,7 @@ html {
 }
 .resume .summary .summaryContainer ul {
   font-size: 20px;
-  padding-left: 30px;
-  margin-top: 25px;
+  margin: 25px 0px 0px 50px;
 }
 .resume .summary .summaryContainer ul li {
   padding: 8px;
@@ -465,9 +459,9 @@ html {
 }
 .resume .education::before {
   content: "";
-  top: 10%;
+  top: 12%;
   left: 6px;
-  height: 68%;
+  height: 85%;
   border-left: 3px solid black;
   position: absolute;
   display: block;
@@ -494,78 +488,27 @@ html {
   font-weight: bold;
   color: #fdfbfb;
   padding: 8px;
-  width: 60px;
+  width: 100px;
   text-align: center;
+  font-size: 16px;
   background-color: #668172;
   margin: 10px 30px;
 }
 .resume .education .educationDetail p {
-  margin-left: 30px;
+  margin: 5px 0px 5px 30px;
 }
-.resume .education .educationDetail1 {
-  padding: 20px 50px 0px 0px;
-}
-.resume .education .educationDetail1 h3 {
-  padding-left: 30px;
-  position: relative;
-}
-.resume .education .educationDetail1 h3 .educationCircle1 {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  left: 0px;
-  top: 5px;
-  background-color: white;
-  z-index: 10;
-}
-.resume .education .educationDetail1 .year {
+.resume .education .educationDetail p a {
+  font-size: 18px;
   font-weight: bold;
-  color: #fdfbfb;
-  padding: 8px;
-  width: 60px;
-  text-align: center;
-  background-color: #668172;
-  margin: 10px 30px;
+  color: blue;
 }
-.resume .education .educationDetail1 p {
-  margin-left: 30px;
-}
-.resume .education .educationDetail2 {
-  padding: 20px 50px 0px 0px;
-}
-.resume .education .educationDetail2 h3 {
-  padding-left: 30px;
-  position: relative;
-}
-.resume .education .educationDetail2 h3 .educationCircle2 {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  left: 0px;
-  top: 5px;
-  background-color: white;
-  z-index: 10;
-}
-.resume .education .educationDetail2 .year {
-  font-weight: bold;
-  color: #fdfbfb;
-  padding: 8px;
-  width: 60px;
-  text-align: center;
-  background-color: #668172;
-  margin: 10px 30px;
-}
-.resume .education .educationDetail2 p {
-  margin-left: 30px;
+.resume .education .educationDetail p a:hover {
+  color: rgb(74, 74, 255);
 }
 .resume .experience {
   position: relative;
   grid-column: 11/20;
-  grid-row: 3/21;
+  grid-row: 3/24;
 }
 .resume .experience::before {
   content: "";
@@ -595,43 +538,24 @@ html {
   background-color: white;
   z-index: 10;
 }
+.resume .experience .experienceDetail .year {
+  font-weight: bold;
+  color: #fdfbfb;
+  width: 100px;
+  text-align: center;
+  font-size: 16px;
+  background-color: #668172;
+  margin: 8px 0px 8px 30px;
+  padding: 8px 0px;
+}
 .resume .experience .experienceDetail p {
   margin-left: 30px;
-  padding: 10px 0px;
+  padding: 8px 0px;
 }
 .resume .experience .experienceDetail ul {
-  margin-left: 30px;
+  margin-left: 50px;
 }
 .resume .experience .experienceDetail ul li {
-  padding: 10px 0px;
-}
-.resume .experience .experienceDetail1 {
-  font-size: 20px;
-  padding: 20px 50px 0px 0px;
-}
-.resume .experience .experienceDetail1 h3 {
-  padding-left: 30px;
-  position: relative;
-}
-.resume .experience .experienceDetail1 h3 .experienceCircle1 {
-  position: absolute;
-  border-radius: 100px;
-  width: 15px;
-  height: 15px;
-  border: 3px solid black;
-  top: 5px;
-  left: 0px;
-  background-color: white;
-  z-index: 10;
-}
-.resume .experience .experienceDetail1 p {
-  margin-left: 30px;
-  padding: 10px 0px;
-}
-.resume .experience .experienceDetail1 ul {
-  margin-left: 30px;
-}
-.resume .experience .experienceDetail1 ul li {
   padding: 10px 0px;
 }
 
@@ -645,44 +569,57 @@ html {
 
 @media (max-width: 1100px) {
   .resume {
-    width: 800px;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(21, 1fr);
+    width: 860px;
+    grid-template-columns: 150px repeat(20, 42px);
+    grid-template-rows: repeat(28, 48px);
+  }
+  .resume h2 {
+    grid-column: 1/2;
+  }
+  .resume .education {
+    grid-column: 1/10;
   }
   .resume .education::before {
-    height: 65%;
+    height: 80%;
+  }
+  .resume .summary {
+    grid-column: 1/10;
+  }
+  .resume .experience {
+    grid-column: 10/20;
+    grid-row: 3/27;
   }
   .resume .experience::before {
-    height: 93%;
+    height: 87%;
   }
 }
 @media (max-width: 885px) {
   .resume {
     width: 100%;
-    grid-template-columns: auto 450px auto;
-    grid-template-rows: repeat(37, 50px);
+    grid-template-columns: auto 50px 100px 250px 50px auto;
+    grid-template-rows: repeat(43, 50px);
   }
   .resume h2 {
-    grid-column: 2/3;
+    grid-column: 2/4;
   }
   .resume .summary {
-    grid-column: 2/3;
+    grid-column: 2/6;
   }
   .resume .summary h3 {
     grid-column: 2/3;
   }
   .resume .education {
-    grid-column: 2/3;
+    grid-column: 2/6;
   }
   .resume .education h3 {
     grid-column: 2/3;
   }
   .resume .experience {
-    grid-row: 19/37;
-    grid-column: 2/3;
+    grid-row: 21/43;
+    grid-column: 2/6;
   }
   .resume .experience::before {
-    height: 87%;
+    height: 91%;
   }
   .resume .experience h3 {
     grid-column: 2/3;
@@ -690,34 +627,17 @@ html {
 }
 @media (max-width: 500px) {
   .resume {
-    grid-template-columns: auto 330px auto;
-    grid-template-rows: repeat(45, 50px);
-  }
-  .resume h2 {
-    grid-column: 2/3;
-  }
-  .resume .summary {
-    grid-column: 2/3;
-  }
-  .resume .summary h3 {
-    grid-column: 2/3;
+    grid-template-columns: auto 50px 100px 130px 50px auto;
+    grid-template-rows: repeat(48, 50px);
   }
   .resume .education {
-    grid-row: 11/23;
-    grid-column: 2/3;
-  }
-  .resume .education h3 {
-    grid-column: 2/3;
+    grid-row: 11/21;
   }
   .resume .experience {
-    grid-row: 23/45;
-    grid-column: 2/3;
+    grid-row: 22/49;
   }
   .resume .experience::before {
-    height: 91%;
-  }
-  .resume .experience h3 {
-    grid-column: 2/3;
+    height: 88%;
   }
 }
 .portfolio {
@@ -751,7 +671,7 @@ html {
 }
 .portfolio .portfolioContainer .portfolioItem {
   overflow: hidden;
-  margin: 5px 10px 5px 0px;
+  margin: 15px 10px 15px 0px;
   width: 400px;
   height: 200px;
   position: relative;
@@ -766,7 +686,7 @@ html {
 }
 .portfolio .portfolioContainer .portfolioItem .portfolioLink {
   width: 180px;
-  height: 50px;
+  height: 0px;
   cursor: pointer;
   background-color: rgba(172, 172, 172, 0.9);
   left: 50%;
@@ -776,22 +696,26 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.4s;
 }
 .portfolio .portfolioContainer .portfolioItem .portfolioLink:hover {
   background-color: rgba(144, 144, 144, 0.8);
 }
 .portfolio .portfolioContainer .portfolioItem .portfolioLink .fa-arrow-right {
+  transition: 0.4s;
+  opacity: 0;
   font-size: 2rem;
 }
 
 @media (max-width: 1100px) {
   .portfolio {
-    width: 95%;
+    width: 860px;
     grid-template-columns: 55px 150px repeat(19, 1fr);
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 885px) {
   .portfolio {
+    width: 100%;
     grid-template-rows: repeat(22, 30px);
   }
   .portfolio p {
@@ -799,12 +723,22 @@ html {
   }
   .portfolio .portfolioContainer {
     grid-row: 7/22;
+    align-items: center;
     flex-direction: column;
   }
 }
-@media (max-width: 525px) {
+@media (max-width: 500px) {
   .portfolio {
-    grid-template-columns: 5px 150px repeat(19, 1fr);
+    grid-template-columns: auto 50px 100px 130px 50px auto;
+  }
+  .portfolio h2 {
+    grid-column: 2/4;
+  }
+  .portfolio p {
+    grid-column: 2/6;
+  }
+  .portfolio .portfolioContainer {
+    grid-column: 2/6;
   }
   .portfolio .portfolioContainer .portfolioItem {
     width: 330px;
@@ -957,7 +891,7 @@ html {
   .contact {
     width: 80%;
     grid-template-columns: 150px auto;
-    grid-template-rows: repeat(40, 30px);
+    grid-template-rows: repeat(33, 30px);
   }
   .contact h2 {
     grid-column: 1/2;
@@ -968,17 +902,17 @@ html {
   }
   .contact .contactContainer {
     grid-column: 1/3;
-    grid-row: 8/40;
+    grid-row: 8/32;
     grid-template-columns: 30px auto 30px;
     grid-template-rows: repeat(20, 1fr);
   }
   .contact .contactContainer .contactForm {
     grid-column: 2/3;
-    grid-row: 2/9;
+    grid-row: 2/11;
   }
   .contact .contactContainer .contactInfo {
     grid-column: 2/3;
-    grid-row: 9/18;
+    grid-row: 12/21;
     display: flex;
     flex-direction: column;
     align-items: center;

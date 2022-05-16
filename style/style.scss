@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Hubballi", cursive;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 html {
@@ -54,6 +54,7 @@ html {
 
 // side nav menu
 .hiddenNav {
+  overflow-x: hidden;
   transform: translateX(-300px);
   position: fixed;
   left: 0;
@@ -240,6 +241,7 @@ html {
         text-align: center;
         font-weight: bold;
         transition: 0.4s;
+        position: relative;
         &:nth-child(1)::after {
           right: 0px;
           top: 0;
@@ -310,6 +312,7 @@ html {
       grid-column: 3/4;
       grid-row: 2/7;
       padding: 20px;
+
       p {
         display: none;
       }
@@ -340,7 +343,7 @@ html {
   .about {
     width: 100%;
     grid-template-columns: auto 50px 100px 250px 50px auto;
-    grid-template-rows: repeat(10, 50px);
+    grid-template-rows: repeat(11, 50px);
     h2 {
       grid-column: 2/4;
       grid-row: 1/3;
@@ -355,7 +358,7 @@ html {
     .skillListRWD {
       display: block;
       grid-column: 3/5;
-      grid-row: 6/11;
+      grid-row: 6/12;
       div {
         background-color: #17492f;
         color: #f5efed;
@@ -365,9 +368,13 @@ html {
         border-radius: 5px;
         border-bottom: 1px solid #e1d5d0;
       }
+
       p {
-        display: none;
-        padding: 10px;
+        // display: none;
+        height: 0px;
+        overflow-x: hidden;
+        transition: 0.4s;
+        // padding: 10px;
         background-color: #e1d5d0;
       }
     }
@@ -376,13 +383,6 @@ html {
 @media (max-width: 500px) {
   .about {
     grid-template-columns: auto 30px 120px 140px 30px auto;
-    grid-template-rows: repeat(10, 50px) 20px;
-    p {
-      grid-row: 3/8;
-    }
-    .skillListRWD {
-      grid-row: 7/12;
-    }
   }
 }
 //resume
@@ -391,7 +391,7 @@ html {
   margin: 100px auto 30px auto;
   display: grid;
   grid-template-columns: repeat(20, 55px);
-  grid-template-rows: repeat(21, 48px);
+  grid-template-rows: repeat(24, 48px);
   h2 {
     grid-column: 2/5;
     grid-row: 1/3;
@@ -442,14 +442,14 @@ html {
       }
       ul {
         font-size: 20px;
-        padding-left: 30px;
-        margin-top: 25px;
+        margin: 25px 0px 0px 50px;
         li {
           padding: 8px;
         }
       }
     }
   }
+
   .education {
     grid-column: 2/10;
     grid-row: 10/20;
@@ -457,9 +457,9 @@ html {
     position: relative;
     &::before {
       content: "";
-      top: 10%;
+      top: 12%;
       left: 6px;
-      height: 68%;
+      height: 85%;
       border-left: 3px solid black;
       position: absolute;
       display: block;
@@ -485,73 +485,22 @@ html {
         font-weight: bold;
         color: #fdfbfb;
         padding: 8px;
-        width: 60px;
+        width: 100px;
         text-align: center;
+        font-size: 16px;
         background-color: #668172;
         margin: 10px 30px;
       }
       p {
-        margin-left: 30px;
-      }
-    }
-    .educationDetail1 {
-      padding: 20px 50px 0px 0px;
-      h3 {
-        padding-left: 30px;
-        position: relative;
-        .educationCircle1 {
-          position: absolute;
-          border-radius: 100px;
-          width: 15px;
-          height: 15px;
-          border: 3px solid black;
-          left: 0px;
-          top: 5px;
-          background-color: white;
-          z-index: 10;
+        margin: 5px 0px 5px 30px;
+        a {
+          font-size: 18px;
+          font-weight: bold;
+          color: blue;
+          &:hover {
+            color: rgb(74, 74, 255);
+          }
         }
-      }
-      .year {
-        font-weight: bold;
-        color: #fdfbfb;
-        padding: 8px;
-        width: 60px;
-        text-align: center;
-        background-color: #668172;
-        margin: 10px 30px;
-      }
-      p {
-        margin-left: 30px;
-      }
-    }
-    .educationDetail2 {
-      padding: 20px 50px 0px 0px;
-      h3 {
-        padding-left: 30px;
-        position: relative;
-        .educationCircle2 {
-          position: absolute;
-          border-radius: 100px;
-          width: 15px;
-          height: 15px;
-          border: 3px solid black;
-          left: 0px;
-          top: 5px;
-          background-color: white;
-          z-index: 10;
-        }
-      }
-      .year {
-        font-weight: bold;
-        color: #fdfbfb;
-        padding: 8px;
-        width: 60px;
-        text-align: center;
-        background-color: #668172;
-        margin: 10px 30px;
-      }
-      p {
-        margin-left: 30px;
       }
     }
   }
@@ -559,7 +508,7 @@ html {
   .experience {
     position: relative;
     grid-column: 11/20;
-    grid-row: 3/21;
+    grid-row: 3/24;
     &::before {
       content: "";
       top: 60px;
@@ -587,41 +536,22 @@ html {
           z-index: 10;
         }
       }
-      p {
-        margin-left: 30px;
-        padding: 10px 0px;
-      }
-      ul {
-        margin-left: 30px;
-        li {
-          padding: 10px 0px;
-        }
-      }
-    }
-    .experienceDetail1 {
-      font-size: 20px;
-      padding: 20px 50px 0px 0px;
-      h3 {
-        padding-left: 30px;
-        position: relative;
-        .experienceCircle1 {
-          position: absolute;
-          border-radius: 100px;
-          width: 15px;
-          height: 15px;
-          border: 3px solid black;
-          top: 5px;
-          left: 0px;
-          background-color: white;
-          z-index: 10;
-        }
+      .year {
+        font-weight: bold;
+        color: #fdfbfb;
+        width: 100px;
+        text-align: center;
+        font-size: 16px;
+        background-color: #668172;
+        margin: 8px 0px 8px 30px;
+        padding: 8px 0px;
       }
       p {
         margin-left: 30px;
-        padding: 10px 0px;
+        padding: 8px 0px;
       }
       ul {
-        margin-left: 30px;
+        margin-left: 50px;
         li {
           padding: 10px 0px;
         }
@@ -640,46 +570,56 @@ html {
 
 @media (max-width: 1100px) {
   .resume {
-    width: 800px;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(21, 1fr);
+    width: 860px;
+    grid-template-columns: 150px repeat(20, 42px);
+    grid-template-rows: repeat(28, 48px);
+    h2 {
+      grid-column: 1/2;
+    }
     .education {
+      grid-column: 1/10;
       &::before {
-        height: 65%;
+        height: 80%;
       }
     }
+    .summary {
+      grid-column: 1/10;
+    }
     .experience {
+      grid-column: 10/20;
+      grid-row: 3/27;
       &::before {
-        height: 93%;
+        height: 87%;
       }
     }
   }
 }
 @media (max-width: 885px) {
   .resume {
+    // grid-template-columns: auto 450px auto;
     width: 100%;
-    grid-template-columns: auto 450px auto;
-    grid-template-rows: repeat(37, 50px);
+    grid-template-columns: auto 50px 100px 250px 50px auto;
+    grid-template-rows: repeat(43, 50px);
     h2 {
-      grid-column: 2/3;
+      grid-column: 2/4;
     }
     .summary {
-      grid-column: 2/3;
+      grid-column: 2/6;
       h3 {
         grid-column: 2/3;
       }
     }
     .education {
-      grid-column: 2/3;
+      grid-column: 2/6;
       h3 {
         grid-column: 2/3;
       }
     }
     .experience {
-      grid-row: 19/37;
-      grid-column: 2/3;
+      grid-row: 21/43;
+      grid-column: 2/6;
       &::before {
-        height: 87%;
+        height: 91%;
       }
       h3 {
         grid-column: 2/3;
@@ -689,32 +629,16 @@ html {
 }
 @media (max-width: 500px) {
   .resume {
-    grid-template-columns: auto 330px auto;
-    grid-template-rows: repeat(45, 50px);
-    h2 {
-      grid-column: 2/3;
-    }
-    .summary {
-      grid-column: 2/3;
-      h3 {
-        grid-column: 2/3;
-      }
-    }
+    grid-template-columns: auto 50px 100px 130px 50px auto;
+    grid-template-rows: repeat(48, 50px);
+
     .education {
-      grid-row: 11/23;
-      grid-column: 2/3;
-      h3 {
-        grid-column: 2/3;
-      }
+      grid-row: 11/21;
     }
     .experience {
-      grid-row: 23/45;
-      grid-column: 2/3;
+      grid-row: 22/49;
       &::before {
-        height: 91%;
-      }
-      h3 {
-        grid-column: 2/3;
+        height: 88%;
       }
     }
   }
@@ -749,7 +673,7 @@ html {
     display: flex;
     .portfolioItem {
       overflow: hidden;
-      margin: 5px 10px 5px 0px;
+      margin: 15px 10px 15px 0px;
       width: 400px;
       height: 200px;
       position: relative;
@@ -763,7 +687,7 @@ html {
       }
       .portfolioLink {
         width: 180px;
-        height: 50px;
+        height: 0px;
         cursor: pointer;
         background-color: rgb(172, 172, 172, 0.9);
         left: 50%;
@@ -773,10 +697,13 @@ html {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: 0.4s;
         &:hover {
           background-color: rgb(144, 144, 144, 0.8);
         }
         .fa-arrow-right {
+          transition: 0.4s;
+          opacity: 0;
           font-size: 2rem;
         }
       }
@@ -786,27 +713,36 @@ html {
 
 @media (max-width: 1100px) {
   .portfolio {
-    width: 95%;
+    width: 860px;
     grid-template-columns: 55px 150px repeat(19, 1fr);
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 885px) {
   .portfolio {
+    width: 100%;
     grid-template-rows: repeat(22, 30px);
     p {
       grid-row: 4/7;
     }
     .portfolioContainer {
       grid-row: 7/22;
+      align-items: center;
       flex-direction: column;
     }
   }
 }
-@media (max-width: 525px) {
+@media (max-width: 500px) {
   .portfolio {
-    grid-template-columns: 5px 150px repeat(19, 1fr);
+    grid-template-columns: auto 50px 100px 130px 50px auto;
+    h2 {
+      grid-column: 2/4;
+    }
+    p {
+      grid-column: 2/6;
+    }
     .portfolioContainer {
+      grid-column: 2/6;
       .portfolioItem {
         width: 330px;
         height: 150px;
@@ -956,7 +892,7 @@ html {
   .contact {
     width: 80%;
     grid-template-columns: 150px auto;
-    grid-template-rows: repeat(40, 30px);
+    grid-template-rows: repeat(33, 30px);
     h2 {
       grid-column: 1/2;
     }
@@ -966,16 +902,16 @@ html {
     }
     .contactContainer {
       grid-column: 1/3;
-      grid-row: 8/40;
+      grid-row: 8/32;
       grid-template-columns: 30px auto 30px;
       grid-template-rows: repeat(20, 1fr);
       .contactForm {
         grid-column: 2/3;
-        grid-row: 2/9;
+        grid-row: 2/11;
       }
       .contactInfo {
         grid-column: 2/3;
-        grid-row: 9/18;
+        grid-row: 12/21;
         display: flex;
         flex-direction: column;
         align-items: center;
