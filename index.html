@@ -25,16 +25,16 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   </head>
   <body>
-    <section class="navBurger">
+    <div class="navBurger flexCenter">
       <div class="burgerLine1"></div>
       <div class="burgerLine2"></div>
       <div class="burgerLine3"></div>
-    </section>
+    </div>
     <nav class="hiddenNav">
       <div class="imageContainer">
         <div class="headShot"></div>
       </div>
-      <h2>James Chen</h2>
+      <h4>James Chen</h4>
       <ul class="iconLogo">
         <li><i class="fa-brands fa-github"></i></li>
         <li><i class="fa-brands fa-instagram"></i></li>
@@ -49,7 +49,7 @@
       </ul>
     </nav>
     <section class="main">
-      <div class="blackBackground">
+      <div class="blackBackground flexCenter">
         <h1>James Chen</h1>
         <h4>I'm a <span id="typed"></span></h4>
       </div>
@@ -95,8 +95,8 @@
         </ul>
       </div>
       <div class="skill">
-        <div class="surpriseContainer spin">
-          <div class="surpriseItem preventSpin">Click me</div>
+        <div class="rotateBallContainer spin flexCenter">
+          <div class="rotateBallItem preventSpin">Click me</div>
         </div>
         <div class="skillTitle">
           <div>HTML5</div>
@@ -132,24 +132,6 @@
             <li>SEO</li>
             <li>Firebase</li>
           </ul>
-          <!-- <p>
-            55557Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Aspernatur non minus sapiente dignissimos dolorum molestias impedit,
-            nulla ea quam rerum. Totam libero dolores laboriosam architecto cum
-            et, ducimus ratione neque!
-          </p>
-          <p>
-            6666Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Aspernatur non minus sapiente dignissimos dolorum molestias impedit,
-            nulla ea quam rerum. Totam libero dolores laboriosam architecto cum
-            et, ducimus ratione neque!
-          </p>
-          <p>
-            777777Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Aspernatur non minus sapiente dignissimos dolorum molestias impedit,
-            nulla ea quam rerum. Totam libero dolores laboriosam architecto cum
-            et, ducimus ratione neque!
-          </p> -->
         </div>
       </div>
     </section>
@@ -160,7 +142,7 @@
         <div class="summaryContainer">
           <h3>
             James Chen
-            <div class="summaryCircle"></div>
+            <div class="titleCircle"></div>
           </h3>
           <p>
             Self-taught Front-End Engineer and Web Developer. Joined WeHelp
@@ -178,7 +160,7 @@
         <div class="educationDetail">
           <h3>
             WeHelp Bootcamp
-            <div class="educationCircle"></div>
+            <div class="titleCircle"></div>
           </h3>
           <p class="year">2021-2022</p>
           <p>
@@ -190,7 +172,7 @@
         <div class="educationDetail">
           <h3>
             Udemy
-            <div class="educationCircle"></div>
+            <div class="titleCircle"></div>
           </h3>
           <p class="year">2021-2022</p>
           <p>
@@ -214,7 +196,7 @@
         <div class="educationDetail">
           <h3>
             TamKang University
-            <div class="educationCircle"></div>
+            <div class="titleCircle"></div>
           </h3>
           <p class="year">2010-2014</p>
           <p>New Taipei City, Taiwan</p>
@@ -226,7 +208,7 @@
         <div class="experienceDetail">
           <h3>
             Brewer / Bar Manager
-            <div class="experienceCircle"></div>
+            <div class="titleCircle"></div>
           </h3>
           <p class="year">2019-2021</p>
           <p>Zhang Men Brewing - Taipei, Taiwan</p>
@@ -248,7 +230,7 @@
         <div class="experienceDetail">
           <h3>
             Hostel Manager
-            <div class="experienceCircle"></div>
+            <div class="titleCircle"></div>
           </h3>
           <p class="year">2016-2018</p>
           <p>Ximen Wow Hostel - Taipei, Taiwan</p>
@@ -265,7 +247,7 @@
         <div class="experienceDetail">
           <h3>
             Tour leader / Salesman
-            <div class="experienceCircle"></div>
+            <div class="titleCircle"></div>
           </h3>
           <p class="year">2014-2016</p>
           <p>Dragon Tours - Taipei, Taiwan</p>
@@ -288,19 +270,19 @@
       <div class="portfolioContainer">
         <div class="portfolioItem">
           <img src="./photo/drinkgether.jpg" alt="" />
-          <div class="portfolioLink">
+          <div class="portfolioLink flexCenter">
             <i class="fa-solid fa-arrow-right"></i>
           </div>
         </div>
         <div class="portfolioItem">
           <img src="./photo/taipei tour.jpg" alt="" />
-          <div class="portfolioLink">
+          <div class="portfolioLink flexCenter">
             <i class="fa-solid fa-arrow-right"></i>
           </div>
         </div>
       </div>
     </section>
-    <section class="contact">
+    <footer class="contact">
       <h2>Contact</h2>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
@@ -321,21 +303,21 @@
         </section>
         <section class="contactInfo">
           <div class="contactInfoItem">
-            <div class="contactIconContainer">
+            <div class="contactIconContainer flexCenter">
               <i class="fa-solid fa-envelope"></i>
             </div>
             <h4>Email</h4>
             <p>js1031222@gmail.com</p>
           </div>
           <div class="contactInfoItem">
-            <div class="contactIconContainer">
+            <div class="contactIconContainer flexCenter">
               <i class="fa-solid fa-square-phone-flip"></i>
             </div>
             <h4>Call</h4>
             <p>+886 952207442</p>
           </div>
           <div class="contactInfoItem">
-            <div class="contactIconContainer">
+            <div class="contactIconContainer flexCenter">
               <i class="fa-brands fa-linkedin-in"></i>
             </div>
             <h4>LinkedIn</h4>
@@ -349,8 +331,7 @@
           </div>
         </section>
       </div>
-    </section>
+    </footer>
   </body>
-
   <script src="./app.js"></script>
 </html>

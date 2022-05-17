@@ -6,104 +6,14 @@ const select = (ele, all = false) => {
     return document.querySelector(ele);
   }
 };
-const on = (type, ele, listener, all = false) => {
-  let selectEle = select(ele, all);
+const on = (type, ele, listener) => {
+  let selectEle = select(ele);
   if (selectEle) {
-    if (all) {
-      selectEle.forEach((e) => e.addEventListener(type, listener));
-    } else {
-      selectEle.addEventListener(type, listener);
-    }
+    selectEle.addEventListener(type, listener);
   }
 };
 
-//global variable
-const about = select(".about");
-const portfolioItem = select(".portfolioItem", true);
-const portfolioContainer = select(".portfolioLink", true);
-const portfolioArrowRight = select(".fa-arrow-right", true);
-
-//event handler
-//hidden nav icon
-on("click", ".fa-linkedin", () => {
-  window.open("https://www.linkedin.com/in/james-chen-867491216/", "_blank");
-});
-on("click", ".fa-instagram", () => {
-  window.open("https://www.instagram.com/james1562454/", "_blank");
-});
-on("click", ".fa-github", () => {
-  window.open("https://github.com/JamesChenTW09?tab=repositories", "_blank");
-});
-
-//about surprise ball
-on("click", ".surpriseContainer", (e) => {
-  let tar = e.target;
-  tar.children[0].classList.add("spinOneCircle");
-  tar.classList.remove("spin");
-  tar.classList.add("transformRight");
-  setTimeout(() => {
-    tar.classList.remove("transformRight");
-    tar.children[0].classList.remove("spinOneCircle");
-    tar.classList.add("spin");
-  }, 2700);
-});
-
-//portfolio link show up when hover
-portfolioItem[0].addEventListener("mouseenter", () => {
-  portfolioArrowRight[0].style.opacity = "1";
-  portfolioContainer[0].style.height = "55px";
-});
-portfolioItem[0].addEventListener("mouseleave", () => {
-  portfolioArrowRight[0].style.opacity = "0";
-  portfolioContainer[0].style.height = "0px";
-});
-portfolioItem[1].addEventListener("mouseenter", () => {
-  portfolioArrowRight[1].style.opacity = "1";
-  portfolioContainer[1].style.height = "55px";
-});
-portfolioItem[1].addEventListener("mouseleave", () => {
-  portfolioArrowRight[1].style.opacity = "0";
-  portfolioContainer[1].style.height = "0px";
-});
-//portfolio link event
-portfolioArrowRight[0].addEventListener("click", () => {
-  window.open("https://drinkgether.com", "_blank");
-});
-portfolioArrowRight[1].addEventListener("click", () => {
-  window.open("http://34.200.206.129:3000/", "_blank");
-});
-//about part rwd size
-window.onresize = function () {
-  if (window.innerWidth > 885) {
-    about.style.gridTemplateRows = "60px 20px 100px 20px 301px";
-  } else {
-    about.style.gridTemplateRows = "repeat(8, 50px)";
-  }
-};
-
-//nav part
-(function () {
-  const navLinks = select(".navLinks li", true);
-  const main = select(".main");
-  const resume = select(".resume");
-  const portfolio = select(".portfolio");
-  const contact = select(".contact");
-  const hiddenNav = select(".hiddenNav");
-
-  on("click", ".navBurger", function (e) {
-    hiddenNav.classList.toggle("showHiddenNav");
-    this.classList.toggle("burgerTransform");
-  });
-  const scrollEleArray = [main, about, resume, portfolio, contact];
-  let scrollLenght = scrollEleArray.length;
-  for (let i = 0; i < scrollLenght; i++) {
-    navLinks[i].addEventListener("click", (e) => {
-      scrollEleArray[i].scrollIntoView();
-    });
-  }
-})();
-
-//main page typing animation
+//main type.js
 var typed = new Typed("#typed", {
   strings: ["Front-End engineer", "Beer Lover", "Travel Addict"],
   backSpeed: 40,
@@ -113,6 +23,82 @@ var typed = new Typed("#typed", {
   loop: true,
 });
 
+//nav
+// show hidden nav
+on("click", ".navBurger", function (e) {
+  const hiddenNav = select(".hiddenNav");
+  hiddenNav.classList.toggle("showHiddenNav");
+  this.classList.toggle("burgerTransform");
+});
+// scroll to view event
+const about = select(".about");
+const navLinks = select(".navLinks li", true);
+const main = select(".main");
+const resume = select(".resume");
+const portfolio = select(".portfolio");
+const contact = select(".contact");
+const scrollEleArray = [main, about, resume, portfolio, contact];
+const scrollLenght = scrollEleArray.length;
+for (let i = 0; i < scrollLenght; i++) {
+  navLinks[i].addEventListener("click", (e) => {
+    scrollEleArray[i].scrollIntoView();
+  });
+}
+
+//icon inside hidden nav
+const linkedinUrl = "https://www.linkedin.com/in/james-chen-867491216/";
+const igUrl = "https://www.instagram.com/james1562454/";
+const githubUrl = "https://github.com/JamesChenTW09?tab=repositories";
+on("click", ".fa-linkedin", () => window.open(linkedinUrl));
+on("click", ".fa-instagram", () => window.open(igUrl));
+on("click", ".fa-github", () => window.open(githubUrl));
+
+//about
+//about part rwd size
+
+window.onresize = function () {
+  if (window.innerWidth > 885) {
+    about.style.gridTemplateRows = "60px 20px 100px 20px 301px";
+  } else {
+    about.style.gridTemplateRows = "repeat(8, 50px)";
+  }
+};
+
+//about rotate ball
+on("click", ".rotateBallContainer", function () {
+  const rotateInside = this.children[0];
+  rotateInside.classList.add("spinOneCircle");
+  this.classList.add("transformRight");
+  setTimeout(() => {
+    this.classList.remove("transformRight");
+    rotateInside.classList.remove("spinOneCircle");
+  }, 2700);
+});
+
+//portfolio
+//portfolio link event
+const drinkgetherUrl = "https://drinkgether.com";
+const taipeiTourUrl = "http://34.200.206.129:3000/";
+const portfolioItem = select(".portfolioItem", true);
+const portfolioContainer = select(".portfolioLink", true);
+const portfolioArrowRight = select(".fa-arrow-right", true);
+
+portfolioArrowRight[0].onclick = () => window.open(drinkgetherUrl);
+portfolioArrowRight[1].onclick = () => window.open(taipeiTourUrl);
+
+//portfolio link show up when hover
+const portfolioItemLen = portfolioItem.length;
+for (let i = 0; i < portfolioItemLen; i++) {
+  portfolioItem[i].onmouseenter = () => {
+    portfolioArrowRight[i].style.opacity = "1";
+    portfolioContainer[i].style.height = "55px";
+  };
+  portfolioItem[i].onmouseleave = () => {
+    portfolioArrowRight[i].style.opacity = "0";
+    portfolioContainer[i].style.height = "0px";
+  };
+}
+
 //skill arrow width changing
 (function () {
   const allSkillTitle = select(".skillTitle div", true);
@@ -120,16 +106,15 @@ var typed = new Typed("#typed", {
   let allSkillTitleLength = allSkillTitle.length;
   for (let i = 0; i < allSkillTitleLength; i++) {
     allSkillTitle[i].style.width = "80%";
-    allSkillTitle[i].addEventListener("click", (e) => {
-      const skillTitle = e.target;
-      if (skillTitle.style.width == "100%") {
-        skillTitle.style.width = "80%";
+    allSkillTitle[i].addEventListener("click", function () {
+      if (this.style.width == "100%") {
+        this.style.width = "80%";
       } else {
         for (let i = 0; i < allSkillTitleLength; i++) {
           allSkillTitle[i].style.width = "80%";
           skillContent[i].style.display = "none";
         }
-        skillTitle.style.width = "100%";
+        this.style.width = "100%";
         skillContent[i].style.display = "flex";
       }
     });
