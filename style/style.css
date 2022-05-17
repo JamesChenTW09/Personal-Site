@@ -225,6 +225,7 @@ html {
   display: none;
 }
 .about .skill {
+  overflow: hidden;
   background-color: #e1d5d0;
   border-radius: 5px;
   grid-column: 2/20;
@@ -233,20 +234,42 @@ html {
   grid-template-columns: 240px 65px 620px 65px;
   grid-template-rows: repeat(7, 43px);
   font-size: 19px;
+  position: relative;
+}
+.about .skill .surpriseContainer {
+  position: absolute;
+  cursor: pointer;
+  background-color: #fdf7f5;
+  width: 90px;
+  height: 90px;
+  bottom: 8%;
+  left: 5%;
+  border-radius: 50%;
+  border-bottom: 6px solid #668172;
+  border-right: 3px solid #5b856e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about .skill .surpriseContainer:hover {
+  background-color: #ffeae3;
+}
+.about .skill .surpriseContainer .surpriseItem {
+  pointer-events: none;
 }
 .about .skill .skillTitle {
   grid-column: 1/2;
   grid-row: 1/8;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: start;
 }
 .about .skill .skillTitle div {
-  overflow: hidden;
   letter-spacing: 2px;
   cursor: pointer;
   background-color: #668172;
   padding: 11px 0px;
+  margin: 1px 0px;
   text-align: center;
   font-weight: bold;
   transition: 0.4s;
@@ -259,7 +282,7 @@ html {
   position: absolute;
   border-left: 40px solid #668172;
   border-top: 20px solid #e1d5d0;
-  border-bottom: 22px solid #e1d5d0;
+  border-bottom: 21px solid #e1d5d0;
 }
 .about .skill .skillTitle div:nth-child(2)::after {
   right: 0px;
@@ -268,7 +291,7 @@ html {
   position: absolute;
   border-left: 40px solid #668172;
   border-top: 20px solid #e1d5d0;
-  border-bottom: 23px solid #e1d5d0;
+  border-bottom: 21px solid #e1d5d0;
 }
 .about .skill .skillTitle div:nth-child(3)::after {
   right: 0px;
@@ -277,7 +300,7 @@ html {
   position: absolute;
   border-left: 40px solid #668172;
   border-top: 20px solid #e1d5d0;
-  border-bottom: 23px solid #e1d5d0;
+  border-bottom: 21px solid #e1d5d0;
 }
 .about .skill .skillTitle div:nth-child(4)::after {
   right: 0px;
@@ -286,34 +309,7 @@ html {
   position: absolute;
   border-left: 40px solid #668172;
   border-top: 20px solid #e1d5d0;
-  border-bottom: 23px solid #e1d5d0;
-}
-.about .skill .skillTitle div:nth-child(5)::after {
-  right: 0px;
-  top: 0;
-  content: "";
-  position: absolute;
-  border-left: 40px solid #668172;
-  border-top: 20px solid #e1d5d0;
-  border-bottom: 23px solid #e1d5d0;
-}
-.about .skill .skillTitle div:nth-child(6)::after {
-  right: 0px;
-  top: 0px;
-  content: "";
-  position: absolute;
-  border-left: 40px solid #668172;
-  border-top: 20px solid #e1d5d0;
-  border-bottom: 23px solid #e1d5d0;
-}
-.about .skill .skillTitle div:nth-child(7)::after {
-  right: 0px;
-  top: 0;
-  content: "";
-  position: absolute;
-  border-left: 40px solid #668172;
-  border-top: 20px solid #e1d5d0;
-  border-bottom: 23px solid #e1d5d0;
+  border-bottom: 21px solid #e1d5d0;
 }
 .about .skill .skillContent {
   box-shadow: 2px 3px 3px 2px #949b88;
@@ -321,10 +317,121 @@ html {
   grid-row: 2/7;
   padding: 20px;
 }
-.about .skill .skillContent p {
+.about .skill .skillContent ul {
+  list-style-type: decimal;
   display: none;
+  flex-wrap: wrap;
+  padding-left: 15px;
+}
+.about .skill .skillContent ul li {
+  width: 30%;
+  margin: 20px 10px 0px 0px;
+  font-size: 1.6rem;
 }
 
+.spin {
+  -webkit-animation: spin 4s linear infinite;
+          animation: spin 4s linear infinite;
+}
+
+.preventSpin {
+  -webkit-animation: preventSpin 4s linear infinite;
+          animation: preventSpin 4s linear infinite;
+}
+
+.spinOneCircle {
+  -webkit-animation: spinOneCircle 2s linear forwards;
+          animation: spinOneCircle 2s linear forwards;
+}
+
+.transformRight {
+  -webkit-animation: moveright 3s linear forwards;
+          animation: moveright 3s linear forwards;
+}
+
+@-webkit-keyframes spinOneCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinOneCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes moveright {
+  0% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(2000px);
+  }
+  80% {
+    transform: translateY(500px);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes moveright {
+  0% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(2000px);
+  }
+  80% {
+    transform: translateY(500px);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes preventSpin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes preventSpin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .about h2::after {
   content: "";
   border-bottom: 4px solid #668172;
@@ -343,12 +450,17 @@ html {
   .about .skill {
     grid-template-columns: 30% 10px 60% 10px;
   }
+  .about .skill .skillContent ul li {
+    width: 40%;
+    margin: 20px 10px 0px 0px;
+    font-size: 1.6rem;
+  }
 }
 @media (max-width: 885px) {
   .about {
     width: 100%;
     grid-template-columns: auto 50px 100px 250px 50px auto;
-    grid-template-rows: repeat(11, 50px);
+    grid-template-rows: repeat(8, 50px);
   }
   .about h2 {
     grid-column: 2/4;
@@ -364,7 +476,7 @@ html {
   .about .skillListRWD {
     display: block;
     grid-column: 3/5;
-    grid-row: 6/12;
+    grid-row: 6/9;
   }
   .about .skillListRWD div {
     background-color: #17492f;
@@ -375,11 +487,15 @@ html {
     border-radius: 5px;
     border-bottom: 1px solid #e1d5d0;
   }
-  .about .skillListRWD p {
+  .about .skillListRWD ul {
     height: 0px;
     overflow-x: hidden;
     transition: 0.4s;
+    text-align: center;
     background-color: #e1d5d0;
+  }
+  .about .skillListRWD ul li {
+    margin: 8px 0px;
   }
 }
 @media (max-width: 500px) {
@@ -793,6 +909,7 @@ html {
   align-items: center;
 }
 .contact .contactContainer .contactForm input {
+  text-align: center;
   padding: 10px 15px;
   width: 300px;
   border-radius: 20px;
@@ -819,6 +936,12 @@ html {
 .contact .contactContainer .contactForm textarea:focus {
   outline: none;
 }
+.contact .contactContainer .contactForm .contactMessage {
+  font-size: 18px;
+  color: red;
+  margin: 10px 0px;
+  font-weight: bold;
+}
 .contact .contactContainer .contactForm button {
   font-weight: bolder;
   padding: 10px 15px;
@@ -826,7 +949,6 @@ html {
   border-radius: 20px;
   border: none;
   background-color: #63746a;
-  margin-top: 20px;
   font-size: 20px;
   cursor: pointer;
 }

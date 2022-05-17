@@ -16,6 +16,7 @@ const on = (type, ele, listener, all = false) => {
     }
   }
 };
+
 //global variable
 const about = select(".about");
 const portfolioItem = select(".portfolioItem", true);
@@ -32,6 +33,19 @@ on("click", ".fa-instagram", () => {
 });
 on("click", ".fa-github", () => {
   window.open("https://github.com/JamesChenTW09?tab=repositories", "_blank");
+});
+
+//about surprise ball
+on("click", ".surpriseContainer", (e) => {
+  let tar = e.target;
+  tar.children[0].classList.add("spinOneCircle");
+  tar.classList.remove("spin");
+  tar.classList.add("transformRight");
+  setTimeout(() => {
+    tar.classList.remove("transformRight");
+    tar.children[0].classList.remove("spinOneCircle");
+    tar.classList.add("spin");
+  }, 2700);
 });
 
 //portfolio link show up when hover
@@ -63,7 +77,7 @@ window.onresize = function () {
   if (window.innerWidth > 885) {
     about.style.gridTemplateRows = "60px 20px 100px 20px 301px";
   } else {
-    about.style.gridTemplateRows = "repeat(11, 50px)";
+    about.style.gridTemplateRows = "repeat(8, 50px)";
   }
 };
 
@@ -81,7 +95,8 @@ window.onresize = function () {
     this.classList.toggle("burgerTransform");
   });
   const scrollEleArray = [main, about, resume, portfolio, contact];
-  for (let i = 0; i < scrollEleArray.length; i++) {
+  let scrollLenght = scrollEleArray.length;
+  for (let i = 0; i < scrollLenght; i++) {
     navLinks[i].addEventListener("click", (e) => {
       scrollEleArray[i].scrollIntoView();
     });
@@ -101,46 +116,74 @@ var typed = new Typed("#typed", {
 //skill arrow width changing
 (function () {
   const allSkillTitle = select(".skillTitle div", true);
-  const skillContent = select(".skillContent p", true);
-  for (let i = 0; i < allSkillTitle.length; i++) {
+  const skillContent = select(".skillContent ul", true);
+  let allSkillTitleLength = allSkillTitle.length;
+  for (let i = 0; i < allSkillTitleLength; i++) {
     allSkillTitle[i].style.width = "80%";
     allSkillTitle[i].addEventListener("click", (e) => {
       const skillTitle = e.target;
       if (skillTitle.style.width == "100%") {
         skillTitle.style.width = "80%";
       } else {
-        for (let i = 0; i < allSkillTitle.length; i++) {
+        for (let i = 0; i < allSkillTitleLength; i++) {
           allSkillTitle[i].style.width = "80%";
           skillContent[i].style.display = "none";
         }
         skillTitle.style.width = "100%";
-        skillContent[i].style.display = "block";
+        skillContent[i].style.display = "flex";
       }
     });
   }
   allSkillTitle[0].style.width = "100%";
-  skillContent[0].style.display = "block";
+  skillContent[0].style.display = "flex";
 })();
 
 // rwd skill transform
 (function () {
-  const skillContent = select(".skillListRWD p", true);
+  const skillContent = select(".skillListRWD ul", true);
   const allSkillTitle = select(".skillListRWD div", true);
   const skillListRWD = select(".skillListRWD");
-  for (let i = 0; i < allSkillTitle.length; i++) {
+  let allSkillTitleLength = allSkillTitle.length;
+  for (let i = 0; i < allSkillTitleLength; i++) {
     allSkillTitle[i].addEventListener("click", (e) => {
-      if (skillContent[i].style.height === "210px") {
-        about.style.gridTemplateRows = "repeat(11, 50px)";
-        skillListRWD.style.gridRow = "6/12";
+      if (skillContent[i].style.height === "150px") {
+        about.style.gridTemplateRows = "repeat(8, 50px)";
+        skillListRWD.style.gridRow = "6/9";
         skillContent[i].style.height = "0";
       } else {
-        for (let i = 0; i < allSkillTitle.length; i++) {
+        for (let i = 0; i < allSkillTitleLength; i++) {
           skillContent[i].style.height = "0";
         }
-        about.style.gridTemplateRows = "repeat(15,50px)";
-        skillListRWD.style.gridRow = "6/16";
-        skillContent[i].style.height = "210px";
+        about.style.gridTemplateRows = "repeat(11,50px)";
+        skillListRWD.style.gridRow = "6/12";
+        skillContent[i].style.height = "150px";
       }
     });
   }
+})();
+
+//contact info handle
+(function () {
+  const address = "js1031222@gmail.com";
+  const contactName = select(".contactName");
+  const contactEmail = select(".contactEmail");
+  const contactAdvice = select(".contactAdvice");
+  const contactMessage = select(".contactMessage");
+  on("click", ".contactButton", () => {
+    let name = contactName.value;
+    let email = contactEmail.value;
+    let advice = contactAdvice.value;
+    if (!name || !email || !advice) {
+      contactMessage.innerText = "有欄位未填寫";
+      return;
+    }
+    const subject = "Hello from " + name;
+    const body = `Hello James,%0AThis is ${name}%0A${advice}%0A%0A${email}%0A${name}`;
+    const mailTo = `mailto:${address}?subject=${subject}&body=${body}`;
+    window.open(mailTo);
+    contactName.value = "";
+    contactEmail.value = "";
+    contactAdvice.value = "";
+    contactMessage.innerText = "";
+  });
 })();
