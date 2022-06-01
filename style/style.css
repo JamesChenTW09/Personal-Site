@@ -815,6 +815,7 @@ html {
 }
 @media (max-width: 500px) {
   .portfolio {
+    width: 100%;
     grid-template-columns: auto 50px 100px 130px 50px auto;
   }
   .portfolio h2 {
@@ -1015,7 +1016,8 @@ html {
 }
 @media (max-width: 500px) {
   .contact {
-    grid-template-columns: auto 150px 180px auto;
+    width: 100%;
+    grid-template-columns: auto 150px 160px auto;
   }
   .contact h2 {
     grid-column: 2/3;
