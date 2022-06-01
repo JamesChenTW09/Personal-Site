@@ -715,13 +715,13 @@ html {
     grid-row: 11/21;
   }
   .resume .education::before {
-    height: 80%;
+    height: 81%;
   }
   .resume .experience {
     grid-row: 22/49;
   }
   .resume .experience::before {
-    height: 90%;
+    height: 91%;
   }
 }
 .portfolio {
