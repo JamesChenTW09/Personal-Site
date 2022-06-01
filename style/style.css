@@ -87,6 +87,7 @@ html {
 }
 .hiddenNav .iconLogo {
   display: flex;
+  list-style: none;
 }
 .hiddenNav .iconLogo li {
   cursor: pointer;
