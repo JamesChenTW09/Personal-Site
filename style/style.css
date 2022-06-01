@@ -432,11 +432,11 @@ html {
   margin-top: 10px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .about {
     width: 860px;
     margin: 10px auto 10px auto;
-    grid-template-columns: repeat(20, 45px);
+    grid-template-columns: repeat(20, 43px);
     grid-template-rows: 60px 20px 100px 20px 301px;
   }
   .about h2 {
@@ -648,10 +648,10 @@ html {
   margin-top: 10px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .resume {
     width: 860px;
-    grid-template-columns: 150px repeat(20, 42px);
+    grid-template-columns: 150px repeat(20, 35px);
     grid-template-rows: repeat(28, 48px);
   }
   .resume h2 {
@@ -671,7 +671,7 @@ html {
     grid-row: 3/27;
   }
   .resume .experience::before {
-    height: 87%;
+    height: 100%;
   }
 }
 @media (max-width: 885px) {
@@ -788,7 +788,7 @@ html {
   font-size: 2rem;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .portfolio {
     width: 860px;
     grid-template-columns: 55px 150px repeat(19, 1fr);
@@ -972,7 +972,7 @@ html {
   font-size: 16px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .contact {
     width: 95%;
     grid-template-columns: repeat(20, 1fr);
