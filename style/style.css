@@ -913,6 +913,7 @@ html {
   font-weight: bold;
 }
 .contact .contactContainer .contactForm button {
+  color: #fdfbfb;
   font-weight: bolder;
   padding: 10px 15px;
   width: 300px;
