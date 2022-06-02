@@ -46,7 +46,7 @@ for (let i = 0; i < scrollLenght; i++) {
 }
 
 //icon inside hidden nav
-const linkedinUrl = "https://www.linkedin.com/in/james-chen-867491216/";
+const linkedinUrl = "https://www.linkedin.com/in/ching-chen-867491216/";
 const igUrl = "https://www.instagram.com/james1562454/";
 const githubUrl = "https://github.com/JamesChenTW09?tab=repositories";
 on("click", ".fa-linkedin", () => window.open(linkedinUrl));
